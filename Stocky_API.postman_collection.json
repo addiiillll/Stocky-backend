@@ -1,0 +1,416 @@
+{
+	"info": {
+		"_postman_id": "stocky-api-collection",
+		"name": "Stocky API Collection",
+		"description": "Complete API collection for Stocky stock rewards system",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/health",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "User Signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"john@example.com\",\n  \"name\": \"John Doe\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/signup",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"john@example.com\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stock Rewards",
+			"item": [
+				{
+					"name": "Create Reward",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": \"{{userId}}\",\n  \"stockSymbol\": \"RELIANCE\",\n  \"quantity\": 5.5\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/reward",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"reward"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Reward with Timestamp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": \"{{userId}}\",\n  \"stockSymbol\": \"TCS\",\n  \"quantity\": 3.25,\n  \"timestamp\": \"2024-01-15T10:30:00Z\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/reward",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"reward"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Multiple Stock Rewards",
+					"item": [
+						{
+							"name": "Reward INFOSYS",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userId\": \"{{userId}}\",\n  \"stockSymbol\": \"INFOSYS\",\n  \"quantity\": 2.75\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/reward",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"reward"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reward HDFC",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userId\": \"{{userId}}\",\n  \"stockSymbol\": \"HDFC\",\n  \"quantity\": 4.0\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/reward",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"reward"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reward ICICIBANK",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"userId\": \"{{userId}}\",\n  \"stockSymbol\": \"ICICIBANK\",\n  \"quantity\": 8.5\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/reward",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"reward"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User Data",
+			"item": [
+				{
+					"name": "Get Today's Stocks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/today-stocks/{{userId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"today-stocks",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Historical INR",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/historical-inr/{{userId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"historical-inr",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Stats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/stats/{{userId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"stats",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Portfolio",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/portfolio/{{userId}}",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"portfolio",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Error Testing",
+			"item": [
+				{
+					"name": "Invalid Reward - Missing Fields",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"userId\": \"{{userId}}\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/reward",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"reward"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid User ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/today-stocks/invalid-user-id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"today-stocks",
+								"invalid-user-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid Route",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/nonexistent-endpoint",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"nonexistent-endpoint"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5000",
+			"type": "string"
+		},
+		{
+			"key": "userId",
+			"value": "user123",
+			"type": "string"
+		}
+	]
+}
